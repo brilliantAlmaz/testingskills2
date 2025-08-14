@@ -1,5 +1,3 @@
-# Логика шапки
-
 Результат можно посмотреть [здесь](https://brilliantalmaz.github.io/testingskills2/)
 
 ## Предисловие
