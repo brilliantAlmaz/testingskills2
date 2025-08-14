@@ -685,7 +685,7 @@ document.addEventListener("DOMContentLoaded", () => {
          document.querySelector('.content__col._undertheme').insertAdjacentHTML(
             'beforeend',
 
-            `<div class="undertheme__item content__item shown" data-id="${contact.id}" data-theme="2"  contentEditable="true"><span contentEditable="true">${contact.client_name ? contact.client_name : "Безымянный "} ${contact.client_surname ? contact.client_surname : ""}</span>
+            `<div class="undertheme__item content__item shown" data-id="${contact.id}" data-theme="2" ><span contentEditable="true">${contact.client_name ? contact.client_name : "Безымянный "} ${contact.client_surname ? contact.client_surname : ""}</span>
                <span contentEditable="false" class="remove"></span></div>`
          )
          // import deal data into _text
