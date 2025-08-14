@@ -232,6 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
             fullIds = md.deals.map(i => i.id);
+            if (!fullIds.length) {
+               fullIds = [-1];
+            }
             newID = fullIds.sort()[fullIds.length - 1] + 1;
             document.querySelector('.content__col._undertheme').insertAdjacentHTML("beforeend",
                `<div style="min-height:40px;" contentEditable="false"  class="undertheme__item content__item shown active new-under" data-theme="${theTheme}"data-id="${newID}">Новая сделка</div>`
@@ -293,6 +296,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             fullIds = md.contacts.map(i => i.id);
+            if (!fullIds.length) {
+               fullIds = [-1];
+            }
             newID = fullIds.sort()[fullIds.length - 1] + 1;
             document.querySelector('.content__col._undertheme').insertAdjacentHTML("beforeend",
                `<div style="min-height:40px;" contentEditable="false"  class="undertheme__item content__item shown active new-under" data-theme="${theTheme}"data-id="${newID}">Новый контакт</div>`
