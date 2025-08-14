@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Тестовое задание - 2 часть</title>
+
+   <style>
+      .remove,
+      .add {
+         cursor: pointer;
+      }
+
+      .text__item,
+      .content__item {
+         transition: all 0.3s ease;
+         background: transparent;
+      }
+
+      *[contenteditable="true"] {
+         outline: none !important
+      }
+
+      .text__item:has([contenteditable="true"]:focus) {
+         background: transparent !important;
+
+      }
+
+      .content__item:has([contenteditable="true"]:focus) {
+         background: orange;
+      }
+
+      .text__value {
+         transition: all 0.3s ease;
+         background: transparent;
+
+      }
+
+      .text__value:focus,
+      .content__item:focus {
+         background: orange !important;
+
+      }
+
+      div {
+         box-sizing: border-box;
+      }
+
+      .wrapper {}
+
+      .container {
+         max-width: 1200px;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+
+
+      .content {
+         display: grid;
+         grid-template-columns: 1fr 1fr 2fr;
+      }
+
+
+      ._theme {}
+
+
+      .content__head,
+      .content__item {
+         width: 100%;
+         padding: 10px;
+         background: #fff;
+         color: #000;
+         transition: all 0.3s ease;
+         border: 1px solid #000;
+         display: none;
+         width: 100%;
+      }
+
+
+      .text__item>* {
+         padding: 10px;
+         border: 1px solid #000;
+      }
+
+      .content__head {
+         display: block;
+         text-align: center;
+         font-weight: 700;
+      }
+
+      .theme__item {
+         display: block;
+      }
+
+      .text__item {
+         padding: 0;
+         grid-template-columns: repeat(2, 1fr);
+
+      }
+
+      .content__item.shown {
+         display: block;
+      }
+
+      .text__item.shown {
+         display: grid;
+      }
+
+      .content__item.active {
+         background: yellow;
+
+      }
+
+      .content__item {
+         position: relative
+      }
+
+      .content__item .remove {
+         transition: all 0.3s ease;
+         position: absolute;
+         width: 20px;
+         height: 20px;
+         background: red;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         margin: auto;
+      }
+
+      .content__item {}
+
+      .undertheme__item {
+         overflow: hidden;
+         max-height: 40px;
+      }
+
+
+
+      .content__item .remove:before,
+      .content__item .remove:after {
+         content: "";
+         background: #fff;
+         display: block;
+         width: 90%;
+         height: 2px;
+         position: absolute;
+         top: 0;
+         left: 0;
+         bottom: 0;
+         right: 20px;
+         margin: auto;
+         transform: rotate(45deg);
+      }
+
+      .content__item .remove:after {
+         transform: rotate(-45deg);
+      }
+
+
+      .content__col {
+         position: relative;
+      }
+
+      .text__value {
+         position: relative;
+      }
+
+      .add {
+         position: absolute;
+         width: 100%;
+         height: 40px;
+         padding: 10px;
+         text-align: center;
+         background: green;
+         color: #fff;
+         font-weight: 700;
+         border: 1px solid #000;
+         bottom: -40px;
+         left: 0;
+         right: 0;
+      }
+   </style>
+
+</head>
+
+<body>
+   <section class="wrapper">
+      <div class="container">
+         <div class="content">
+            <div class="content__col _theme">
+               <div class="content__head">Меню</div>
+               <div class="theme__item content__item shown" data-id="1">Сделки</div>
+               <div class="theme__item content__item shown" data-id="2">Контакты</div>
+            </div>
+            <div class="content__col _undertheme">
+               <div class="content__head">Список</div>
+
+
+
+            </div>
+            <div class="content__col _text">
+               <div class="content__head">Содержание</div>
+
+
+
+            </div>
+
+         </div>
+      </div>
+   </section>
+   <script src="./data.js"></script>
+   <script src="./script.js"></script>
+</body>
+
+</html>
